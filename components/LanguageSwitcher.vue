@@ -1,5 +1,5 @@
 <template>
-  <UDropdown :items="languageItems" :popper="{ placement: 'bottom-end' }">
+  <UDropdownMenu :items="languageItems" :popper="{ placement: 'bottom-end' }">
     <UButton
       :icon="currentLocale === 'en' ? 'i-flag-us-4x3' : 'i-flag-fr-4x3'"
       variant="ghost"
@@ -13,7 +13,7 @@
         <span>{{ item.label }}</span>
       </div>
     </template>
-  </UDropdown>
+  </UDropdownMenu>
 </template>
 
 <script setup lang="ts">
