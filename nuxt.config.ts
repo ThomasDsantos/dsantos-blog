@@ -5,7 +5,11 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/i18n'],
 
+  css: ['~/assets/css/main.css'],
+
   i18n: {
+    lazy: true,
+    langDir: 'locales',
     locales: [
       {
         code: 'en',
@@ -26,9 +30,7 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
-    },
-    langDir: './',
-    lazy: true
+    }
   },
 
   content: {
