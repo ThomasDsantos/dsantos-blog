@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "portfolio": "Portfolio",
+    "about": "About"
+  },
+  "home": {
+    "title": "Hi, I'm Thomas Dsantos",
+    "subtitle": "Full Stack Developer & Tech Enthusiast",
+    "description": "Welcome to my personal space where I share my projects, thoughts, and technical articles."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Technical articles and thoughts",
+    "readMore": "Read more",
+    "readingTime": "{minutes} min read",
+    "noArticles": "No articles found",
+    "published": "Published on"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "My projects and achievements",
+    "viewProject": "View project",
+    "technologies": "Technologies"
+  },
+  "common": {
+    "search": "Search...",
+    "tags": "Tags",
+    "allTags": "All tags",
+    "backToHome": "Back to home",
+    "language": "Language"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with"
+  }
+}

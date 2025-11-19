@@ -1,147 +1,158 @@
-# dsantos-blog - Documentation technique
+# dsantos-blog - Technical Documentation
 
-## 📋 Vue d'ensemble
+## 📋 Overview
 
-Blog et portfolio personnel construit avec **Nuxt 4**, **@nuxt/content** et **@nuxt/ui**.
-Déployé sur VPS via Docker Stack et Traefik pour la gestion SSL/reverse proxy.
+Personal blog and portfolio built with **Nuxt 4**, **@nuxt/content** and **@nuxt/ui**.
+Deployed on VPS via Docker Stack and Traefik for SSL/reverse proxy management.
 
 ## 🏗️ Architecture
 
-### Stack technique
+### Tech Stack
 - **Framework**: Nuxt 4 (RC 13)
 - **UI**: @nuxt/ui (v3 alpha)
-- **Content**: @nuxt/content (gestion du contenu markdown)
+- **Content**: @nuxt/content (markdown content management)
 - **Styling**: TailwindCSS
+- **Internationalization**: @nuxtjs/i18n (French & English)
 - **Runtime**: Node.js 20
 - **Package Manager**: pnpm 9.0.0
 
-### Structure du projet
+### Project Structure
 ```
 dsantos-blog/
-├── components/          # Composants Vue réutilisables
-├── content/            # Contenu markdown (articles, projets)
-├── layouts/            # Layouts Nuxt
-├── pages/              # Pages de l'application
-├── Dockerfile          # Image Docker de production
-├── stack.yaml          # Configuration Docker Stack
-├── Makefile            # Commandes de build et déploiement
-└── nuxt.config.ts      # Configuration Nuxt
+├── components/          # Reusable Vue components
+├── content/            # Markdown content (articles, projects)
+│   ├── en/            # English content
+│   └── fr/            # French content
+├── layouts/            # Nuxt layouts
+├── pages/              # Application pages
+├── Dockerfile          # Production Docker image
+├── stack.yaml          # Docker Stack configuration
+├── Makefile            # Build and deployment commands
+└── nuxt.config.ts      # Nuxt configuration
 ```
 
-## 🚀 Déploiement
+## 🚀 Deployment
 
-### Prérequis
-- Docker avec BuildKit activé
-- Accès au registry GHCR (GitHub Container Registry)
-- Docker context `vps` configuré
-- Réseau Traefik (`traefik-public`) actif sur le VPS
+### Prerequisites
+- Docker with BuildKit enabled
+- Access to GHCR (GitHub Container Registry)
+- Docker context `vps` configured
+- Traefik network (`traefik-public`) running on VPS
 
-### Commandes disponibles
+### Available Commands
 
 ```bash
-# Afficher l'aide
+# Show help
 make help
 
-# Build et push l'image Docker
+# Build and push Docker image
 make build
 
-# Déployer sur le VPS
+# Deploy to VPS
 make deploy
 
-# Build + Deploy (pipeline complète)
+# Build + Deploy (full pipeline)
 make ship
 
-# Voir les logs
+# View logs
 make logs
 
-# Vérifier le status
+# Check status
 make status
 
-# Arrêter l'application
+# Stop application
 make down
 
-# Nettoyer le cache Docker
+# Clean Docker cache
 make clean
 ```
 
-### Configuration du domaine
+### Domain Configuration
 
-Le domaine est configuré dans `stack.yaml` :
+Domain is configured in `stack.yaml`:
 ```yaml
 - "traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)"
 ```
 
-Pour changer le domaine, modifier cette ligne dans `stack.yaml`.
+To change the domain, modify this line in `stack.yaml`.
 
-## 🔧 Configuration Traefik
+## 🔧 Traefik Configuration
 
-L'application utilise Traefik comme reverse proxy avec :
-- **Port interne**: 3000 (Nuxt)
+The application uses Traefik as reverse proxy with:
+- **Internal Port**: 3000 (Nuxt)
 - **Entrypoint**: websecure (HTTPS)
 - **Cert Resolver**: myresolver (Let's Encrypt)
-- **Réseau**: traefik-public
+- **Network**: traefik-public
 
-## 📝 Développement local
+## 🌍 Internationalization
+
+The site supports French and English:
+- Language switcher component with country flags
+- Content organized by language in `content/{locale}/`
+- Automatic locale detection based on browser preferences
+- SEO-friendly URLs with locale prefix
+
+## 📝 Local Development
 
 ```bash
-# Installer les dépendances
+# Install dependencies
 pnpm install
 
-# Lancer le serveur de dev
+# Start dev server
 pnpm dev
 
-# Build en local
+# Build locally
 pnpm build
 
-# Preview de la build
+# Preview build
 pnpm preview
 ```
 
-## 🔐 Registry GitHub
+## 🔐 GitHub Registry
 
-Les images Docker sont stockées sur GHCR :
+Docker images are stored on GHCR:
 - **Registry**: `ghcr.io/thomasdsantos/dsantos-blog`
 - **Tag**: `latest`
 
-Pour s'authentifier :
+To authenticate:
 ```bash
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 ```
 
 ## 🐳 Docker
 
-### Build manuel
+### Manual Build
 ```bash
 docker build -t ghcr.io/thomasdsantos/dsantos-blog:latest .
 docker push ghcr.io/thomasdsantos/dsantos-blog:latest
 ```
 
-### Multi-stage build
-Le Dockerfile utilise une approche multi-stage pour optimiser la taille :
-1. **Builder**: Installation des dépendances et build Nuxt
-2. **Production**: Image légère avec seulement les fichiers nécessaires
+### Multi-stage Build
+The Dockerfile uses a multi-stage approach to optimize size:
+1. **Builder**: Install dependencies and build Nuxt
+2. **Production**: Lightweight image with only necessary files
 
-## 📦 Variables d'environnement
+## 📦 Environment Variables
 
-Variables configurées dans `stack.yaml` :
+Variables configured in `stack.yaml`:
 - `NODE_ENV=production`
 
-## 🔄 Mise à jour
+## 🔄 Updates
 
-Pour mettre à jour l'application en production :
+To update the application in production:
 ```bash
 make ship
 ```
 
-Cette commande :
-1. Build la nouvelle image
-2. Push vers GHCR
-3. Déploie sur le VPS
-4. Docker effectue un rolling update (start-first)
+This command:
+1. Builds the new image
+2. Pushes to GHCR
+3. Deploys to VPS
+4. Docker performs a rolling update (start-first)
 
 ## 🛠️ Troubleshooting
 
-### Les logs ne s'affichent pas
+### Logs not showing
 ```bash
 docker context use vps
 docker service ls
@@ -149,22 +160,23 @@ docker service logs dsantos-blog_blog
 docker context use default
 ```
 
-### L'image ne se build pas
-Vérifier que BuildKit est activé :
+### Image build fails
+Check that BuildKit is enabled:
 ```bash
 export DOCKER_BUILDKIT=1
 ```
 
-### Erreur de connexion au VPS
-Vérifier le context Docker :
+### VPS connection error
+Check Docker context:
 ```bash
 docker context ls
 docker context use vps
 ```
 
-## 📚 Ressources
+## 📚 Resources
 
 - [Nuxt 4 Documentation](https://nuxt.com)
 - [Nuxt Content](https://content.nuxt.com)
+- [Nuxt i18n](https://i18n.nuxtjs.org)
 - [Docker Stack Deploy](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 - [Traefik Documentation](https://doc.traefik.io/traefik/)
