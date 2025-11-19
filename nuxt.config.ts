@@ -6,18 +6,20 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/i18n'],
 
   i18n: {
+    lazy: true,
+    langDir: 'i18n',
     locales: [
       {
         code: 'en',
         iso: 'en-US',
         name: 'English',
-        file: 'i18n/en.json'
+        file: 'en.json'
       },
       {
         code: 'fr',
         iso: 'fr-FR',
         name: 'Français',
-        file: 'i18n/fr.json'
+        file: 'fr.json'
       }
     ],
     defaultLocale: 'en',
@@ -26,8 +28,7 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
-    },
-    lazy: true
+    }
   },
 
   content: {
