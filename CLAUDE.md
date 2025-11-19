@@ -19,14 +19,19 @@ Deployed on VPS via Docker Stack and Traefik for SSL/reverse proxy management.
 
 ### Project Structure
 
+Uses Nuxt 4's new `app/` directory structure:
+
 ```
 dsantos-blog/
-├── components/          # Reusable Vue components
+├── app/                # Application directory (Nuxt 4)
+│   ├── app.vue         # Root application component
+│   ├── assets/         # Static assets (CSS, images, etc.)
+│   ├── components/     # Reusable Vue components
+│   ├── layouts/        # Nuxt layouts
+│   └── pages/          # Application pages
 ├── content/            # Markdown content (articles, projects)
-│   ├── en/            # English content
-│   └── fr/            # French content
-├── layouts/            # Nuxt layouts
-├── pages/              # Application pages
+│   ├── en/             # English content
+│   └── fr/             # French content
 ├── Dockerfile          # Production Docker image
 ├── stack.yaml          # Docker Stack configuration (production)
 ├── stack-next.yaml     # Docker Stack configuration (next environment)
