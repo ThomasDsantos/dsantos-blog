@@ -32,12 +32,7 @@
                   <div class="flex items-center gap-4 text-sm text-gray-500">
                     <span>{{ formatDate(article.date) }}</span>
                     <span v-if="article.tags" class="flex items-center gap-2">
-                      <UBadge
-                        v-for="tag in article.tags"
-                        :key="tag"
-                        size="sm"
-                        variant="subtle"
-                      >
+                      <UBadge v-for="tag in article.tags" :key="tag" size="sm" variant="subtle">
                         {{ tag }}
                       </UBadge>
                     </span>
@@ -49,10 +44,7 @@
               {{ article.description }}
             </p>
             <template #footer>
-              <UButton
-                variant="ghost"
-                trailing-icon="i-heroicons-arrow-right"
-              >
+              <UButton variant="ghost" trailing-icon="i-heroicons-arrow-right">
                 Lire l'article
               </UButton>
             </template>
@@ -72,9 +64,7 @@
 const search = ref('')
 
 const { data: articles } = await useAsyncData('blog-articles', () =>
-  queryContent('/blog')
-    .sort({ date: -1 })
-    .find()
+  queryContent('/blog').sort({ date: -1 }).find()
 )
 
 const filteredArticles = computed(() => {
@@ -82,10 +72,11 @@ const filteredArticles = computed(() => {
   if (!search.value) return articles.value
 
   const searchLower = search.value.toLowerCase()
-  return articles.value.filter((article) =>
-    article.title?.toLowerCase().includes(searchLower) ||
-    article.description?.toLowerCase().includes(searchLower) ||
-    article.tags?.some((tag: string) => tag.toLowerCase().includes(searchLower))
+  return articles.value.filter(
+    article =>
+      article.title?.toLowerCase().includes(searchLower) ||
+      article.description?.toLowerCase().includes(searchLower) ||
+      article.tags?.some((tag: string) => tag.toLowerCase().includes(searchLower))
   )
 })
 

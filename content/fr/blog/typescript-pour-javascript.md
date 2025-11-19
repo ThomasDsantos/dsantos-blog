@@ -1,8 +1,8 @@
 ---
-title: "Pourquoi adopter TypeScript en 2024 ?"
-description: "Les avantages de TypeScript pour les développeurs JavaScript"
-date: "2024-03-25"
-tags: ["typescript", "javascript", "développement"]
+title: 'Pourquoi adopter TypeScript en 2024 ?'
+description: 'Les avantages de TypeScript pour les développeurs JavaScript'
+date: '2024-03-25'
+tags: ['typescript', 'javascript', 'développement']
 readingTime: 7
 ---
 
@@ -41,8 +41,8 @@ interface User {
 
 const user: User = {
   // L'IDE suggère automatiquement les propriétés
-  name: "Thomas",
-  email: "thomas@example.com",
+  name: 'Thomas',
+  email: 'thomas@example.com',
   age: 25
 }
 ```

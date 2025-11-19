@@ -69,10 +69,10 @@ Create a Markdown file in `content/{locale}/blog/`:
 
 ```markdown
 ---
-title: "Your article title"
-description: "Short description"
-date: "2024-03-25"
-tags: ["tag1", "tag2"]
+title: 'Your article title'
+description: 'Short description'
+date: '2024-03-25'
+tags: ['tag1', 'tag2']
 readingTime: 5
 ---
 

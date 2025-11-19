@@ -1,8 +1,8 @@
 ---
-title: "Bienvenue sur mon blog"
-description: "Découvrez mon nouveau blog et portfolio créé avec Nuxt 4 et Nuxt Content"
-date: "2024-01-15"
-tags: ["nuxt", "vue", "web"]
+title: 'Bienvenue sur mon blog'
+description: 'Découvrez mon nouveau blog et portfolio créé avec Nuxt 4 et Nuxt Content'
+date: '2024-01-15'
+tags: ['nuxt', 'vue', 'web']
 readingTime: 5
 ---
 

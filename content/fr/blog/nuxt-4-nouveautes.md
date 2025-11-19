@@ -1,8 +1,8 @@
 ---
-title: "Nuxt 4 : Les nouveautés à connaître"
-description: "Découvrez les nouvelles fonctionnalités et améliorations de Nuxt 4"
-date: "2024-02-20"
-tags: ["nuxt", "vue", "javascript"]
+title: 'Nuxt 4 : Les nouveautés à connaître'
+description: 'Découvrez les nouvelles fonctionnalités et améliorations de Nuxt 4'
+date: '2024-02-20'
+tags: ['nuxt', 'vue', 'javascript']
 readingTime: 8
 ---
 

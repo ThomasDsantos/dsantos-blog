@@ -1,0 +1,25 @@
+# Build output
+.output
+.nuxt
+dist
+
+# Dependencies
+node_modules
+.pnpm-store
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Git
+.git
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Cache
+.cache

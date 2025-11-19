@@ -8,6 +8,7 @@ Deployed on VPS via Docker Stack and Traefik for SSL/reverse proxy management.
 ## 🏗️ Architecture
 
 ### Tech Stack
+
 - **Framework**: Nuxt 4 (RC 13)
 - **UI**: @nuxt/ui (v3 alpha)
 - **Content**: @nuxt/content (markdown content management)
@@ -17,6 +18,7 @@ Deployed on VPS via Docker Stack and Traefik for SSL/reverse proxy management.
 - **Package Manager**: pnpm 9.0.0
 
 ### Project Structure
+
 ```
 dsantos-blog/
 ├── components/          # Reusable Vue components
@@ -34,6 +36,7 @@ dsantos-blog/
 ## 🚀 Deployment
 
 ### Prerequisites
+
 - Docker with BuildKit enabled
 - Access to GHCR (GitHub Container Registry)
 - Docker context `vps` configured
@@ -70,8 +73,9 @@ make clean
 ### Domain Configuration
 
 Domain is configured in `stack.yaml`:
+
 ```yaml
-- "traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)"
+- 'traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)'
 ```
 
 To change the domain, modify this line in `stack.yaml`.
@@ -79,6 +83,7 @@ To change the domain, modify this line in `stack.yaml`.
 ## 🔧 Traefik Configuration
 
 The application uses Traefik as reverse proxy with:
+
 - **Internal Port**: 3000 (Nuxt)
 - **Entrypoint**: websecure (HTTPS)
 - **Cert Resolver**: myresolver (Let's Encrypt)
@@ -87,6 +92,7 @@ The application uses Traefik as reverse proxy with:
 ## 🌍 Internationalization
 
 The site supports French and English:
+
 - Language switcher component with country flags
 - Content organized by language in `content/{locale}/`
 - Automatic locale detection based on browser preferences
@@ -111,10 +117,12 @@ pnpm preview
 ## 🔐 GitHub Registry
 
 Docker images are stored on GHCR:
+
 - **Registry**: `ghcr.io/thomasdsantos/dsantos-blog`
 - **Tag**: `latest`
 
 To authenticate:
+
 ```bash
 echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 ```
@@ -122,29 +130,35 @@ echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
 ## 🐳 Docker
 
 ### Manual Build
+
 ```bash
 docker build -t ghcr.io/thomasdsantos/dsantos-blog:latest .
 docker push ghcr.io/thomasdsantos/dsantos-blog:latest
 ```
 
 ### Multi-stage Build
+
 The Dockerfile uses a multi-stage approach to optimize size:
+
 1. **Builder**: Install dependencies and build Nuxt
 2. **Production**: Lightweight image with only necessary files
 
 ## 📦 Environment Variables
 
 Variables configured in `stack.yaml`:
+
 - `NODE_ENV=production`
 
 ## 🔄 Updates
 
 To update the application in production:
+
 ```bash
 make ship
 ```
 
 This command:
+
 1. Builds the new image
 2. Pushes to GHCR
 3. Deploys to VPS
@@ -153,6 +167,7 @@ This command:
 ## 🛠️ Troubleshooting
 
 ### Logs not showing
+
 ```bash
 docker context use vps
 docker service ls
@@ -161,13 +176,17 @@ docker context use default
 ```
 
 ### Image build fails
+
 Check that BuildKit is enabled:
+
 ```bash
 export DOCKER_BUILDKIT=1
 ```
 
 ### VPS connection error
+
 Check Docker context:
+
 ```bash
 docker context ls
 docker context use vps

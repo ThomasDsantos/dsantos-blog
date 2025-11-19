@@ -15,7 +15,9 @@
             class="hover:shadow-lg transition-shadow"
           >
             <template #header>
-              <div class="aspect-video bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg mb-4 flex items-center justify-center">
+              <div
+                class="aspect-video bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg mb-4 flex items-center justify-center"
+              >
                 <UIcon :name="project.icon" class="w-16 h-16 text-white" />
               </div>
               <h3 class="text-xl font-semibold">{{ project.title }}</h3>
@@ -24,12 +26,7 @@
               {{ project.description }}
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <UBadge
-                v-for="tech in project.technologies"
-                :key="tech"
-                size="sm"
-                variant="subtle"
-              >
+              <UBadge v-for="tech in project.technologies" :key="tech" size="sm" variant="subtle">
                 {{ tech }}
               </UBadge>
             </div>
@@ -68,11 +65,7 @@
                 {{ category.name }}
               </h3>
               <div class="flex flex-wrap gap-2">
-                <UBadge
-                  v-for="skill in category.items"
-                  :key="skill"
-                  variant="subtle"
-                >
+                <UBadge v-for="skill in category.items" :key="skill" variant="subtle">
                   {{ skill }}
                 </UBadge>
               </div>
@@ -86,11 +79,7 @@
           <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Vous avez un projet en tête ? N'hésitez pas à me contacter.
           </p>
-          <UButton
-            to="mailto:contact@example.com"
-            size="lg"
-            icon="i-heroicons-envelope"
-          >
+          <UButton to="mailto:contact@example.com" size="lg" icon="i-heroicons-envelope">
             Me contacter
           </UButton>
         </div>
@@ -103,7 +92,8 @@
 const projects = [
   {
     title: 'E-commerce Platform',
-    description: 'Une plateforme e-commerce complète avec gestion des produits, panier et paiement en ligne.',
+    description:
+      'Une plateforme e-commerce complète avec gestion des produits, panier et paiement en ligne.',
     icon: 'i-heroicons-shopping-cart',
     technologies: ['Nuxt', 'Vue.js', 'Stripe', 'PostgreSQL'],
     link: 'https://example.com',
@@ -111,7 +101,8 @@ const projects = [
   },
   {
     title: 'Dashboard Analytics',
-    description: 'Un tableau de bord analytique en temps réel avec visualisation de données complexes.',
+    description:
+      'Un tableau de bord analytique en temps réel avec visualisation de données complexes.',
     icon: 'i-heroicons-chart-bar',
     technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
     link: 'https://example.com',
@@ -119,7 +110,8 @@ const projects = [
   },
   {
     title: 'Blog CMS',
-    description: 'Un système de gestion de contenu moderne avec éditeur WYSIWYG et prévisualisation en temps réel.',
+    description:
+      'Un système de gestion de contenu moderne avec éditeur WYSIWYG et prévisualisation en temps réel.',
     icon: 'i-heroicons-document-text',
     technologies: ['Nuxt Content', 'Tailwind CSS', 'Markdown'],
     link: 'https://example.com',
@@ -127,7 +119,8 @@ const projects = [
   },
   {
     title: 'API REST',
-    description: 'Une API RESTful robuste et scalable avec authentification JWT et documentation Swagger.',
+    description:
+      'Une API RESTful robuste et scalable avec authentification JWT et documentation Swagger.',
     icon: 'i-heroicons-cloud',
     technologies: ['Node.js', 'Express', 'JWT', 'Swagger'],
     github: 'https://github.com'
