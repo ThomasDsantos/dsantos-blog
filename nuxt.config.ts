@@ -11,13 +11,13 @@ export default defineNuxtConfig({
         code: 'en',
         iso: 'en-US',
         name: 'English',
-        file: 'en.json'
+        file: 'i18n/en.json'
       },
       {
         code: 'fr',
         iso: 'fr-FR',
         name: 'Français',
-        file: 'fr.json'
+        file: 'i18n/fr.json'
       }
     ],
     defaultLocale: 'en',
@@ -27,7 +27,6 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     },
-    langDir: './',
     lazy: true
   },
 
