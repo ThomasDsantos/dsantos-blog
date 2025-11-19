@@ -5,6 +5,8 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/i18n'],
 
+  css: ['~/assets/css/main.css'],
+
   i18n: {
     lazy: true,
     langDir: 'locales',
