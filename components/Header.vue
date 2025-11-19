@@ -13,7 +13,7 @@
               variant="ghost"
               color="gray"
             >
-              Accueil
+              {{ $t('nav.home') }}
             </UButton>
           </li>
           <li>
@@ -22,7 +22,7 @@
               variant="ghost"
               color="gray"
             >
-              Blog
+              {{ $t('nav.blog') }}
             </UButton>
           </li>
           <li>
@@ -31,17 +31,20 @@
               variant="ghost"
               color="gray"
             >
-              Portfolio
+              {{ $t('nav.portfolio') }}
             </UButton>
           </li>
           <li>
             <UButton
-              icon="i-heroicons-moon"
+              :icon="colorMode.value === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
               variant="ghost"
               color="gray"
               aria-label="Toggle dark mode"
               @click="toggleDark"
             />
+          </li>
+          <li>
+            <LanguageSwitcher />
           </li>
         </ul>
       </nav>

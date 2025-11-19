@@ -1,109 +1,129 @@
 # Thomas Dsantos - Blog & Portfolio
 
-Un blog personnel et portfolio moderne créé avec Nuxt 4, Nuxt UI et Nuxt Content.
+A modern personal blog and portfolio built with Nuxt 4, Nuxt UI and Nuxt Content.
 
-## Technologies utilisées
+## Tech Stack
 
-- **[Nuxt 4](https://nuxt.com/)** - Le framework Vue.js intuitif
-- **[Nuxt UI](https://ui.nuxt.com/)** - Bibliothèque de composants UI moderne
-- **[Nuxt Content](https://content.nuxt.com/)** - Gestion de contenu basée sur fichiers
-- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utility-first
-- **[TypeScript](https://www.typescriptlang.org/)** - JavaScript avec typage statique
+- **[Nuxt 4](https://nuxt.com/)** - The Intuitive Vue Framework
+- **[Nuxt UI](https://ui.nuxt.com/)** - Modern UI component library
+- **[Nuxt Content](https://content.nuxt.com/)** - File-based content management
+- **[Nuxt i18n](https://i18n.nuxtjs.org/)** - Internationalization for Nuxt
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org/)** - JavaScript with static typing
 
-## Fonctionnalités
+## Features
 
-- 📝 Blog avec articles en Markdown
-- 💼 Section Portfolio
-- 🎨 Design moderne et responsive
-- 🌙 Mode sombre/clair
-- 🔍 Recherche d'articles
-- 🏷️ Système de tags
-- ⚡ Performance optimale
+- 📝 Blog with Markdown articles
+- 💼 Portfolio section
+- 🌍 Multi-language support (French & English)
+- 🎨 Modern and responsive design
+- 🌙 Dark/Light mode
+- 🔍 Article search
+- 🏷️ Tag system
+- ⚡ Optimal performance
 
 ## Installation
 
 ```bash
-# Installer les dépendances
+# Install dependencies
 pnpm install
 
-# Lancer le serveur de développement
+# Start development server
 pnpm dev
 
-# Build pour la production
+# Build for production
 pnpm build
 
-# Prévisualiser la version de production
+# Preview production build
 pnpm preview
 ```
 
-## Structure du projet
+## Project Structure
 
 ```
-├── app.vue                 # Point d'entrée de l'application
-├── app.config.ts          # Configuration Nuxt UI
-├── nuxt.config.ts         # Configuration Nuxt
-├── components/            # Composants réutilisables
+├── app.vue                 # Application entry point
+├── app.config.ts          # Nuxt UI configuration
+├── nuxt.config.ts         # Nuxt configuration
+├── components/            # Reusable components
 │   ├── Header.vue
-│   └── Footer.vue
-├── layouts/               # Layouts de l'application
+│   ├── Footer.vue
+│   └── LanguageSwitcher.vue
+├── layouts/               # Application layouts
 │   └── default.vue
-├── pages/                 # Pages du site
-│   ├── index.vue         # Page d'accueil
-│   ├── portfolio.vue     # Page portfolio
+├── pages/                 # Site pages
+│   ├── index.vue         # Homepage
+│   ├── portfolio.vue     # Portfolio page
 │   └── blog/
-│       ├── index.vue     # Liste des articles
-│       └── [...slug].vue # Page d'article
-└── content/              # Contenu en Markdown
-    └── blog/             # Articles de blog
+│       ├── index.vue     # Article list
+│       └── [...slug].vue # Article page
+└── content/              # Markdown content
+    ├── en/               # English content
+    │   └── blog/
+    └── fr/               # French content
+        └── blog/
 ```
 
-## Ajouter un nouvel article
+## Adding a New Article
 
-Créez un fichier Markdown dans `content/blog/` :
+Create a Markdown file in `content/{locale}/blog/`:
 
 ```markdown
 ---
-title: "Titre de votre article"
-description: "Description courte"
+title: "Your article title"
+description: "Short description"
 date: "2024-03-25"
 tags: ["tag1", "tag2"]
 readingTime: 5
 ---
 
-# Votre contenu ici
+# Your content here
 
-Écrivez votre article en Markdown...
+Write your article in Markdown...
 ```
 
-## Personnalisation
+## Customization
 
-### Modifier les informations personnelles
+### Update Personal Information
 
-- Éditez `pages/index.vue` pour la présentation
-- Modifiez `pages/portfolio.vue` pour les projets
-- Ajustez `components/Header.vue` et `components/Footer.vue` pour la navigation
+- Edit `pages/index.vue` for the presentation
+- Modify `pages/portfolio.vue` for projects
+- Adjust `components/Header.vue` and `components/Footer.vue` for navigation
 
-### Changer les couleurs
+### Change Colors
 
-Éditez `app.config.ts` :
+Edit `app.config.ts`:
 
 ```typescript
 export default defineAppConfig({
   ui: {
-    primary: 'blue', // Changez la couleur primaire
+    primary: 'blue', // Change primary color
     gray: 'slate'
   }
 })
 ```
 
-## Déploiement
+## Deployment
 
-Ce projet peut être déployé sur :
+### Docker Stack (VPS)
+
+```bash
+# Build and deploy
+make ship
+
+# Or step by step
+make build   # Build and push image
+make deploy  # Deploy to VPS
+```
+
+See [CLAUDE.md](./CLAUDE.md) for detailed deployment documentation.
+
+### Other Platforms
+
+This project can also be deployed on:
 
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
-- [GitHub Pages](https://pages.github.com/)
 
 ## License
 

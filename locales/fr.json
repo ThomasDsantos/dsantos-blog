@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "portfolio": "Portfolio",
+    "about": "À propos"
+  },
+  "home": {
+    "title": "Salut, je suis Thomas Dsantos",
+    "subtitle": "Développeur Full Stack & Passionné de Tech",
+    "description": "Bienvenue dans mon espace personnel où je partage mes projets, mes réflexions et mes articles techniques."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Articles techniques et réflexions",
+    "readMore": "Lire la suite",
+    "readingTime": "{minutes} min de lecture",
+    "noArticles": "Aucun article trouvé",
+    "published": "Publié le"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Mes projets et réalisations",
+    "viewProject": "Voir le projet",
+    "technologies": "Technologies"
+  },
+  "common": {
+    "search": "Rechercher...",
+    "tags": "Tags",
+    "allTags": "Tous les tags",
+    "backToHome": "Retour à l'accueil",
+    "language": "Langue"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "madeWith": "Fait avec"
+  }
+}
