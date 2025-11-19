@@ -21,13 +21,15 @@
             </UButton>
           </li>
           <li>
-            <UButton
-              :icon="colorMode.value === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-              variant="ghost"
-              color="gray"
-              aria-label="Toggle dark mode"
-              @click="toggleDark"
-            />
+            <ClientOnly>
+              <UButton
+                :icon="colorMode.value === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
+                variant="ghost"
+                color="gray"
+                aria-label="Toggle dark mode"
+                @click="toggleDark"
+              />
+            </ClientOnly>
           </li>
           <li>
             <LanguageSwitcher />
