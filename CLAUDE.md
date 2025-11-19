@@ -28,7 +28,8 @@ dsantos-blog/
 ├── layouts/            # Nuxt layouts
 ├── pages/              # Application pages
 ├── Dockerfile          # Production Docker image
-├── stack.yaml          # Docker Stack configuration
+├── stack.yaml          # Docker Stack configuration (production)
+├── stack-next.yaml     # Docker Stack configuration (next environment)
 ├── Makefile            # Build and deployment commands
 └── nuxt.config.ts      # Nuxt configuration
 ```
@@ -70,15 +71,41 @@ make down
 make clean
 ```
 
+### Environments
+
+The project supports two deployment environments:
+
+#### Production (`blog.dsantos.fr`)
+- **Stack file**: `stack.yaml`
+- **Deploy**: `make deploy` or `make ship`
+- **Logs**: `make logs`
+- **Status**: `make status`
+- **Remove**: `make down`
+
+#### Next (`next.blog.dsantos.fr`)
+- **Stack file**: `stack-next.yaml`
+- **Deploy**: `make deploy-next` or `make ship-next`
+- **Logs**: `make logs-next`
+- **Status**: `make status-next`
+- **Remove**: `make down-next`
+
+Both environments share the same Docker image from GHCR and run on the same VPS with different domains.
+
 ### Domain Configuration
 
-Domain is configured in `stack.yaml`:
+Domains are configured in the respective stack files:
 
+**Production** (`stack.yaml`):
 ```yaml
 - 'traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)'
 ```
 
-To change the domain, modify this line in `stack.yaml`.
+**Next** (`stack-next.yaml`):
+```yaml
+- 'traefik.http.routers.dsantos-blog-next.rule=Host(`next.blog.dsantos.fr`)'
+```
+
+To change a domain, modify the corresponding line in the stack file.
 
 ## 🔧 Traefik Configuration
 
@@ -151,27 +178,42 @@ Variables configured in `stack.yaml`:
 
 ## 🔄 Updates
 
-To update the application in production:
+To update the application:
 
+**Production**:
 ```bash
 make ship
 ```
 
-This command:
+**Next**:
+```bash
+make ship-next
+```
 
-1. Builds the new image
-2. Pushes to GHCR
-3. Deploys to VPS
+These commands:
+
+1. Build the new image
+2. Push to GHCR
+3. Deploy to VPS
 4. Docker performs a rolling update (start-first)
 
 ## 🛠️ Troubleshooting
 
 ### Logs not showing
 
+**Production**:
 ```bash
 docker context use vps
 docker service ls
 docker service logs dsantos-blog_blog
+docker context use default
+```
+
+**Next**:
+```bash
+docker context use vps
+docker service ls
+docker service logs dsantos-blog-next_blog-next
 docker context use default
 ```
 
