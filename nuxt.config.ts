@@ -3,11 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/content',
-    '@nuxtjs/i18n'
-  ],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/i18n'],
 
   i18n: {
     locales: [
@@ -31,7 +27,8 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     },
-    langDir: 'locales/'
+    langDir: './',
+    lazy: true
   },
 
   content: {
@@ -47,5 +44,9 @@ export default defineNuxtConfig({
 
   colorMode: {
     preference: 'light'
+  },
+
+  fonts: {
+    enabled: false
   }
 })

@@ -1,8 +1,8 @@
 ---
-title: "TypeScript Best Practices for Modern Development"
-description: "Learn the essential TypeScript best practices to write cleaner, safer, and more maintainable code."
-date: "2024-11-18"
-tags: ["typescript", "javascript", "best-practices", "development"]
+title: 'TypeScript Best Practices for Modern Development'
+description: 'Learn the essential TypeScript best practices to write cleaner, safer, and more maintainable code.'
+date: '2024-11-18'
+tags: ['typescript', 'javascript', 'best-practices', 'development']
 readingTime: 8
 ---
 
@@ -38,10 +38,10 @@ Let TypeScript infer types when possible:
 
 ```typescript
 // Good
-const message = "Hello World"
+const message = 'Hello World'
 
 // Unnecessary
-const message: string = "Hello World"
+const message: string = 'Hello World'
 ```
 
 ## 4. Use Interfaces and Types Appropriately

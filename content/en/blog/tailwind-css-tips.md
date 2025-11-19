@@ -1,8 +1,8 @@
 ---
-title: "Tailwind CSS: Tips and Tricks"
-description: "Discover useful tips and tricks to make the most of Tailwind CSS in your projects."
-date: "2024-11-17"
-tags: ["tailwind", "css", "frontend", "design"]
+title: 'Tailwind CSS: Tips and Tricks'
+description: 'Discover useful tips and tricks to make the most of Tailwind CSS in your projects.'
+date: '2024-11-17'
+tags: ['tailwind', 'css', 'frontend', 'design']
 readingTime: 6
 ---
 
@@ -32,7 +32,7 @@ module.exports = {
         brand: {
           50: '#f0f9ff',
           500: '#0ea5e9',
-          900: '#0c4a6e',
+          900: '#0c4a6e'
         }
       }
     }
@@ -49,9 +49,7 @@ Just-In-Time mode generates styles on-demand, resulting in faster build times an
 Tailwind makes responsive design easy with breakpoint prefixes:
 
 ```html
-<div class="text-sm md:text-base lg:text-lg">
-  Responsive text
-</div>
+<div class="text-sm md:text-base lg:text-lg">Responsive text</div>
 ```
 
 ## Conclusion

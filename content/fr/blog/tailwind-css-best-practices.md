@@ -1,8 +1,8 @@
 ---
-title: "Tailwind CSS : Bonnes pratiques et astuces"
-description: "Apprenez à utiliser Tailwind CSS efficacement dans vos projets"
-date: "2024-03-10"
-tags: ["css", "tailwind", "design"]
+title: 'Tailwind CSS : Bonnes pratiques et astuces'
+description: 'Apprenez à utiliser Tailwind CSS efficacement dans vos projets'
+date: '2024-03-10'
+tags: ['css', 'tailwind', 'design']
 readingTime: 6
 ---
 
@@ -40,7 +40,7 @@ Le mode JIT (Just-In-Time) génère les classes à la demande :
 
 ```js
 module.exports = {
-  mode: 'jit',
+  mode: 'jit'
   // ...
 }
 ```
@@ -54,7 +54,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand': '#3490dc',
+        brand: '#3490dc'
       }
     }
   }

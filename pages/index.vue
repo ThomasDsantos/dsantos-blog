@@ -7,22 +7,14 @@
           Salut, je suis <span class="text-primary">Thomas Dsantos</span>
         </h1>
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
-          Développeur Full-Stack passionné par la création d'applications web modernes et performantes.
+          Développeur Full-Stack passionné par la création d'applications web modernes et
+          performantes.
         </p>
         <div class="flex items-center justify-center gap-4">
-          <UButton
-            to="/portfolio"
-            size="lg"
-            icon="i-heroicons-briefcase"
-          >
+          <UButton to="/portfolio" size="lg" icon="i-heroicons-briefcase">
             Voir mon portfolio
           </UButton>
-          <UButton
-            to="/blog"
-            size="lg"
-            variant="outline"
-            icon="i-heroicons-document-text"
-          >
+          <UButton to="/blog" size="lg" variant="outline" icon="i-heroicons-document-text">
             Lire le blog
           </UButton>
         </div>
@@ -36,12 +28,14 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Je suis un développeur passionné avec plusieurs années d'expérience dans le développement web.
-              Je me spécialise dans les technologies modernes comme Vue.js, Nuxt, React et Node.js.
+              Je suis un développeur passionné avec plusieurs années d'expérience dans le
+              développement web. Je me spécialise dans les technologies modernes comme Vue.js, Nuxt,
+              React et Node.js.
             </p>
             <p class="text-gray-600 dark:text-gray-400">
-              J'aime créer des expériences utilisateur exceptionnelles et des applications performantes.
-              Je partage régulièrement mes connaissances à travers mon blog et je contribue à l'open source.
+              J'aime créer des expériences utilisateur exceptionnelles et des applications
+              performantes. Je partage régulièrement mes connaissances à travers mon blog et je
+              contribue à l'open source.
             </p>
           </div>
           <div>
@@ -61,11 +55,7 @@
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-3xl font-bold">Derniers articles</h2>
-          <UButton
-            to="/blog"
-            variant="ghost"
-            trailing-icon="i-heroicons-arrow-right"
-          >
+          <UButton to="/blog" variant="ghost" trailing-icon="i-heroicons-arrow-right">
             Voir tous les articles
           </UButton>
         </div>
@@ -113,10 +103,7 @@ const technologies = [
 ]
 
 const { data: latestArticles } = await useAsyncData('latest-articles', () =>
-  queryContent('/blog')
-    .sort({ date: -1 })
-    .limit(4)
-    .find()
+  queryContent('/blog').sort({ date: -1 }).limit(4).find()
 )
 
 const formatDate = (date: string) => {

@@ -11,11 +11,7 @@
             <span v-if="article?.readingTime">{{ article.readingTime }} min de lecture</span>
           </div>
           <div v-if="article?.tags" class="flex items-center gap-2">
-            <UBadge
-              v-for="tag in article.tags"
-              :key="tag"
-              variant="subtle"
-            >
+            <UBadge v-for="tag in article.tags" :key="tag" variant="subtle">
               {{ tag }}
             </UBadge>
           </div>
@@ -28,11 +24,7 @@
 
         <!-- Navigation -->
         <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <UButton
-            to="/blog"
-            variant="ghost"
-            icon="i-heroicons-arrow-left"
-          >
+          <UButton to="/blog" variant="ghost" icon="i-heroicons-arrow-left">
             Retour au blog
           </UButton>
         </div>
@@ -66,54 +58,6 @@ const formatDate = (date: string) => {
 
 useHead({
   title: article.value?.title,
-  meta: [
-    { name: 'description', content: article.value?.description }
-  ]
+  meta: [{ name: 'description', content: article.value?.description }]
 })
 </script>
-
-<style>
-.prose {
-  @apply text-gray-700 dark:text-gray-300;
-}
-
-.prose h2 {
-  @apply text-2xl font-bold mt-8 mb-4;
-}
-
-.prose h3 {
-  @apply text-xl font-semibold mt-6 mb-3;
-}
-
-.prose p {
-  @apply mb-4 leading-relaxed;
-}
-
-.prose a {
-  @apply text-primary underline hover:no-underline;
-}
-
-.prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm;
-}
-
-.prose pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
-}
-
-.prose pre code {
-  @apply bg-transparent p-0;
-}
-
-.prose ul {
-  @apply list-disc list-inside mb-4;
-}
-
-.prose ol {
-  @apply list-decimal list-inside mb-4;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-primary pl-4 italic my-6;
-}
-</style>

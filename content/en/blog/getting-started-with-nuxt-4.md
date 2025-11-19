@@ -1,8 +1,8 @@
 ---
-title: "Getting Started with Nuxt 4"
-description: "Discover the new features and improvements in Nuxt 4, the latest version of the intuitive Vue framework."
-date: "2024-11-19"
-tags: ["nuxt", "vue", "javascript", "web"]
+title: 'Getting Started with Nuxt 4'
+description: 'Discover the new features and improvements in Nuxt 4, the latest version of the intuitive Vue framework.'
+date: '2024-11-19'
+tags: ['nuxt', 'vue', 'javascript', 'web']
 readingTime: 5
 ---
 
