@@ -30,18 +30,25 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Développeur Full-Stack passionné par les technologies modernes et DevOps.
-              Je travaille actuellement chez <strong>Numberly</strong> à Paris, où je conçois
-              et développe des solutions web performantes et scalables.
+              <strong>Développeur Full-Stack</strong> chez <strong>Numberly (1000mercis Group)</strong> depuis plus de 4 ans,
+              je travaille sur la <strong>Martech Platform et la Data Management Platform</strong> :
+              une solution CRM omnicanal innovante avec 9 applications web, une vingtaine d'APIs
+              et des millions d'entrées en base de données.
             </p>
             <p class="text-gray-600 dark:text-gray-400 mb-4">
-              J'ai une expertise particulière en <strong>Rust</strong> et <strong>Go</strong>
-              pour le backend, ainsi qu'en <strong>Vue.js/Nuxt</strong> pour le frontend.
-              Passionné par l'automatisation et l'infrastructure as code avec <strong>Nix</strong>.
+              Mon stack technique : <strong>Vue.js 3</strong>, <strong>Python</strong> (FastAPI, Flask, Django),
+              <strong>Go</strong>, <strong>Rust</strong> pour les APIs performantes,
+              avec <strong>Kubernetes</strong>, <strong>Docker</strong>, <strong>Kafka</strong> pour l'infrastructure.
+              Bases de données : MongoDB, ScyllaDB, PostgreSQL, MsSQL.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Diplômé d'<strong>EPITECH</strong> (Master of Science en Technologies de l'information)
+              avec une année d'échange à l'<strong>Université Laval</strong> au Québec.
             </p>
             <p class="text-gray-600 dark:text-gray-400">
-              Je contribue régulièrement à l'open source et je partage mes connaissances
-              à travers mon blog et mes projets sur GitHub.
+              Ancien <strong>Caporal - Sapeur-Pompier Volontaire</strong> (SDIS 77) pendant 7 ans,
+              spécialisé en secours routiers et moniteur JSP.
+              Passionné par l'open source, l'automatisation et l'infrastructure as code.
             </p>
           </div>
           <div>
@@ -98,17 +105,24 @@
 
 <script setup lang="ts">
 const technologies = [
-  'Rust',
-  'Go',
   'Vue.js',
-  'Nuxt',
+  'Python',
+  'Go',
+  'Rust',
+  'FastAPI',
+  'Flask',
+  'Django',
   'TypeScript',
-  'Node.js',
-  'Nix',
+  'Kubernetes',
   'Docker',
+  'Kafka',
+  'MongoDB',
+  'ScyllaDB',
   'PostgreSQL',
-  'Tailwind CSS',
-  'Lua'
+  'Cypress',
+  'Nix',
+  'Helm',
+  'Grafana'
 ]
 
 const { data: latestArticles } = await useAsyncData('latest-articles', () =>

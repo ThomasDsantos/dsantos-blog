@@ -128,17 +128,27 @@ const skills = [
   {
     name: 'Backend',
     icon: 'i-heroicons-server',
-    items: ['Rust', 'Go', 'Node.js', 'Axum', 'SeaORM', 'PostgreSQL']
+    items: ['Python', 'FastAPI', 'Flask', 'Django', 'Go', 'Rust', 'Node.js', 'Axum', 'SeaORM']
   },
   {
     name: 'Frontend',
     icon: 'i-heroicons-computer-desktop',
-    items: ['Vue.js', 'Nuxt', 'TypeScript', 'Tailwind CSS', 'React']
+    items: ['Vue.js 3', 'Nuxt', 'TypeScript', 'React', 'SCSS', 'Cypress', 'Tailwind CSS']
   },
   {
-    name: 'DevOps & Outils',
+    name: 'Infrastructure & DevOps',
+    icon: 'i-heroicons-cube',
+    items: ['Kubernetes', 'Docker', 'Helm', 'Kafka', 'Nix', 'Gitlab CI', 'Grafana']
+  },
+  {
+    name: 'Bases de données',
+    icon: 'i-heroicons-circle-stack',
+    items: ['MongoDB', 'ScyllaDB', 'PostgreSQL', 'MsSQL', 'Redis']
+  },
+  {
+    name: 'Outils & Méthodologies',
     icon: 'i-heroicons-wrench-screwdriver',
-    items: ['Docker', 'Nix', 'Git', 'GitHub', 'Neovim', 'Linux']
+    items: ['Git', 'GitHub', 'Neovim', 'Linux', 'Agile', 'Tests unitaires']
   }
 ]
 </script>
