@@ -1,8 +1,8 @@
 {
   "name": "dsantos-blog",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build": "nuxt build",
@@ -26,6 +26,7 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
     "@iconify-json/flag": "^1.2.10",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.59",

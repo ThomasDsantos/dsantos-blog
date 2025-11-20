@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="min-h-screen flex flex-col">
     <Header />
@@ -7,5 +9,3 @@
     <Footer />
   </div>
 </template>
-
-<script setup lang="ts"></script>

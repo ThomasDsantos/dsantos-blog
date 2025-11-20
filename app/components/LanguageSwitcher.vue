@@ -1,3 +1,30 @@
+<script setup lang="ts">
+const { locale, setLocale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+function handleLanguageChange(value: string) {
+  setLocale(value)
+  navigateTo(switchLocalePath(value))
+}
+
+const languageItems = computed(() => [
+  {
+    label: 'English',
+    icon: 'i-flag-gb-4x3',
+    value: 'en',
+    onSelect: () => handleLanguageChange('en'),
+  },
+  {
+    label: 'Français',
+    icon: 'i-flag-fr-4x3',
+    value: 'fr',
+    onSelect: () => handleLanguageChange('fr'),
+  },
+])
+
+const currentLocale = computed(() => languageItems.value.find(item => item.value === locale.value) || languageItems.value[0])
+</script>
+
 <template>
   <UDropdownMenu :items="languageItems" :popper="{ placement: 'bottom-end' }">
     <UButton
@@ -15,30 +42,3 @@
     </template>
   </UDropdownMenu>
 </template>
-
-<script setup lang="ts">
-const { locale, locales, setLocale } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-
-const handleLanguageChange = (value: string) => {
-  setLocale(value)
-  navigateTo(switchLocalePath(value))
-}
-
-const languageItems = computed(() => [
-    {
-      label: 'English',
-      icon: 'i-flag-gb-4x3',
-      value: 'en',
-      onSelect: () => handleLanguageChange('en')
-    },
-    {
-      label: 'Français',
-      icon: 'i-flag-fr-4x3',
-      value: 'fr',
-      onSelect: () => handleLanguageChange('fr')
-    }
-])
-
-const currentLocale = computed(() => languageItems.value.find((item) => item.value === locale.value) || languageItems.value[0])
-</script>

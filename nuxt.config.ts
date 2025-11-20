@@ -8,47 +8,27 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   i18n: {
-    lazy: true,
     langDir: 'locales',
     locales: [
       {
         code: 'en',
         iso: 'en-US',
         name: 'English',
-        file: 'en.json'
+        file: 'en.json',
       },
       {
         code: 'fr',
         iso: 'fr-FR',
         name: 'Français',
-        file: 'fr.json'
-      }
+        file: 'fr.json',
+      },
     ],
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
-    }
-  },
-
-  content: {
-    highlight: {
-      theme: {
-        default: 'github-light',
-        dark: 'github-dark'
-      }
+      redirectOn: 'root',
     },
-    locales: ['en', 'fr'],
-    defaultLocale: 'en'
   },
-
-  colorMode: {
-    preference: 'light'
-  },
-
-  fonts: {
-    enabled: false
-  }
 })

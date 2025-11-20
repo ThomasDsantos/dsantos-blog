@@ -102,12 +102,12 @@ Domains are configured in the respective stack files:
 
 **Production** (`stack.yaml`):
 ```yaml
-- 'traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)'
+- traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)
 ```
 
 **Next** (`stack-next.yaml`):
 ```yaml
-- 'traefik.http.routers.dsantos-blog-next.rule=Host(`next.blog.dsantos.fr`)'
+- traefik.http.routers.dsantos-blog-next.rule=Host(`next.blog.dsantos.fr`)
 ```
 
 To change a domain, modify the corresponding line in the stack file.
@@ -246,3 +246,7 @@ docker context use vps
 - [Nuxt i18n](https://i18n.nuxtjs.org)
 - [Docker Stack Deploy](https://docs.docker.com/engine/reference/commandline/stack_deploy/)
 - [Traefik Documentation](https://doc.traefik.io/traefik/)
+
+Always use context7 when I need code generation, setup or configuration steps, or
+library/API documentation. This means you should automatically use the Context7 MCP
+tools to resolve library id and get library docs without me having to explicitly ask.

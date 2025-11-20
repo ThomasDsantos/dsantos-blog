@@ -1,8 +1,18 @@
+<script setup lang="ts">
+const colorMode = useColorMode()
+
+function toggleDark() {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+</script>
+
 <template>
   <header class="border-b border-gray-200 dark:border-gray-800">
     <UContainer>
       <nav class="flex items-center justify-between py-4">
-        <NuxtLink to="/" class="text-xl font-bold"> Thomas Dsantos </NuxtLink>
+        <NuxtLink to="/" class="text-xl font-bold">
+          Thomas Dsantos
+        </NuxtLink>
 
         <ul class="flex items-center gap-6">
           <li>
@@ -39,11 +49,3 @@
     </UContainer>
   </header>
 </template>
-
-<script setup lang="ts">
-const colorMode = useColorMode()
-
-const toggleDark = () => {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-}
-</script>

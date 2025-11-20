@@ -6,12 +6,12 @@ services:
     networks:
       - traefik-public
     labels:
-      - 'traefik.enable=true'
-      - 'traefik.http.services.dsantos-blog.loadbalancer.server.port=3000'
-      - 'traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)'
-      - 'traefik.http.routers.dsantos-blog.entrypoints=websecure'
-      - 'traefik.http.routers.dsantos-blog.tls.certresolver=myresolver'
-      - 'traefik.docker.network=traefik-public'
+      - traefik.enable=true
+      - traefik.http.services.dsantos-blog.loadbalancer.server.port=3000
+      - traefik.http.routers.dsantos-blog.rule=Host(`blog.dsantos.fr`)
+      - traefik.http.routers.dsantos-blog.entrypoints=websecure
+      - traefik.http.routers.dsantos-blog.tls.certresolver=myresolver
+      - traefik.docker.network=traefik-public
     deploy:
       replicas: 1
       update_config:
