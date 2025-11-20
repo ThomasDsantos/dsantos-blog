@@ -12,14 +12,14 @@
             variant="ghost"
             color="gray"
             aria-label="Email"
-            to="mailto:contact@example.com"
+            to="mailto:contact@dsantos.fr"
           />
           <UButton
             icon="i-simple-icons-github"
             variant="ghost"
             color="gray"
             aria-label="GitHub"
-            to="https://github.com"
+            to="https://github.com/ThomasDsantos"
             target="_blank"
           />
           <UButton
@@ -27,7 +27,7 @@
             variant="ghost"
             color="gray"
             aria-label="LinkedIn"
-            to="https://linkedin.com"
+            to="https://www.linkedin.com/in/thomas-dsantos/"
             target="_blank"
           />
         </div>

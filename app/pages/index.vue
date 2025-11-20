@@ -7,8 +7,10 @@
           Salut, je suis <span class="text-primary">Thomas Dsantos</span>
         </h1>
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">
-          Développeur Full-Stack passionné par la création d'applications web modernes et
-          performantes.
+          Software developer, Devops enjoyer 🌱
+        </p>
+        <p class="text-md text-gray-500 dark:text-gray-500 mb-8">
+          📍 Paris, France • @Numberly
         </p>
         <div class="flex items-center justify-center gap-4">
           <UButton to="/portfolio" size="lg" icon="i-heroicons-briefcase">
@@ -28,14 +30,18 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <p class="text-gray-600 dark:text-gray-400 mb-4">
-              Je suis un développeur passionné avec plusieurs années d'expérience dans le
-              développement web. Je me spécialise dans les technologies modernes comme Vue.js, Nuxt,
-              React et Node.js.
+              Développeur Full-Stack passionné par les technologies modernes et DevOps.
+              Je travaille actuellement chez <strong>Numberly</strong> à Paris, où je conçois
+              et développe des solutions web performantes et scalables.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              J'ai une expertise particulière en <strong>Rust</strong> et <strong>Go</strong>
+              pour le backend, ainsi qu'en <strong>Vue.js/Nuxt</strong> pour le frontend.
+              Passionné par l'automatisation et l'infrastructure as code avec <strong>Nix</strong>.
             </p>
             <p class="text-gray-600 dark:text-gray-400">
-              J'aime créer des expériences utilisateur exceptionnelles et des applications
-              performantes. Je partage régulièrement mes connaissances à travers mon blog et je
-              contribue à l'open source.
+              Je contribue régulièrement à l'open source et je partage mes connaissances
+              à travers mon blog et mes projets sur GitHub.
             </p>
           </div>
           <div>
@@ -92,14 +98,17 @@
 
 <script setup lang="ts">
 const technologies = [
+  'Rust',
+  'Go',
   'Vue.js',
   'Nuxt',
   'TypeScript',
-  'React',
   'Node.js',
-  'Tailwind CSS',
+  'Nix',
+  'Docker',
   'PostgreSQL',
-  'Docker'
+  'Tailwind CSS',
+  'Lua'
 ]
 
 const { data: latestArticles } = await useAsyncData('latest-articles', () =>
