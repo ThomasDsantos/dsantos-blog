@@ -1,9 +1,9 @@
 <template>
   <UDropdownMenu :items="languageItems" :popper="{ placement: 'bottom-end' }">
     <UButton
-      :icon="currentLocale === 'en' ? 'i-flag-us-4x3' : 'i-flag-fr-4x3'"
+      :icon="currentLocale.icon || 'i-flag-gb-4x3'"
       variant="ghost"
-      color="gray"
+      color="secondary"
       :aria-label="$t('common.language')"
     />
 
@@ -20,26 +20,25 @@
 const { locale, locales, setLocale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
-const currentLocale = computed(() => locale.value)
+const handleLanguageChange = (value: string) => {
+  setLocale(value)
+  navigateTo(switchLocalePath(value))
+}
 
 const languageItems = computed(() => [
-  [
     {
       label: 'English',
-      icon: 'i-flag-us-4x3',
-      click: () => {
-        setLocale('en')
-        navigateTo(switchLocalePath('en'))
-      }
+      icon: 'i-flag-gb-4x3',
+      value: 'en',
+      onSelect: () => handleLanguageChange('en')
     },
     {
       label: 'Français',
       icon: 'i-flag-fr-4x3',
-      click: () => {
-        setLocale('fr')
-        navigateTo(switchLocalePath('fr'))
-      }
+      value: 'fr',
+      onSelect: () => handleLanguageChange('fr')
     }
-  ]
 ])
+
+const currentLocale = computed(() => languageItems.value.find((item) => item.value === locale.value) || languageItems.value[0])
 </script>
