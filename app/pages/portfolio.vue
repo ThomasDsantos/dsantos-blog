@@ -79,7 +79,7 @@
           <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Vous avez un projet en tête ? N'hésitez pas à me contacter.
           </p>
-          <UButton to="mailto:contact@example.com" size="lg" icon="i-heroicons-envelope">
+          <UButton to="mailto:contact@dsantos.fr" size="lg" icon="i-heroicons-envelope">
             Me contacter
           </UButton>
         </div>
@@ -91,57 +91,64 @@
 <script setup lang="ts">
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'rust-api-boilerplate',
     description:
-      'Une plateforme e-commerce complète avec gestion des produits, panier et paiement en ligne.',
-    icon: 'i-heroicons-shopping-cart',
-    technologies: ['Nuxt', 'Vue.js', 'Stripe', 'PostgreSQL'],
-    link: 'https://example.com',
-    github: 'https://github.com'
+      'A modern Rust API boilerplate featuring Axum, Utoipa, and SeaORM. Production-ready template for building high-performance REST APIs.',
+    icon: 'i-heroicons-server',
+    technologies: ['Rust', 'Axum', 'SeaORM', 'Utoipa'],
+    github: 'https://github.com/ThomasDsantos/rust-api-boilerplate'
   },
   {
-    title: 'Dashboard Analytics',
+    title: 'go-api-boilerplate',
     description:
-      'Un tableau de bord analytique en temps réel avec visualisation de données complexes.',
-    icon: 'i-heroicons-chart-bar',
-    technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    link: 'https://example.com',
-    github: 'https://github.com'
-  },
-  {
-    title: 'Blog CMS',
-    description:
-      'Un système de gestion de contenu moderne avec éditeur WYSIWYG et prévisualisation en temps réel.',
-    icon: 'i-heroicons-document-text',
-    technologies: ['Nuxt Content', 'Tailwind CSS', 'Markdown'],
-    link: 'https://example.com',
-    github: 'https://github.com'
-  },
-  {
-    title: 'API REST',
-    description:
-      'Une API RESTful robuste et scalable avec authentification JWT et documentation Swagger.',
+      'A modern REST API boilerplate built with Go. Provides a solid foundation for scalable backend services.',
     icon: 'i-heroicons-cloud',
-    technologies: ['Node.js', 'Express', 'JWT', 'Swagger'],
-    github: 'https://github.com'
+    technologies: ['Go', 'REST API', 'Backend'],
+    github: 'https://github.com/ThomasDsantos/go-api-boilerplate'
+  },
+  {
+    title: 'nix-infra',
+    description:
+      'Personal Nix infrastructure setup. Infrastructure as code configuration for reproducible development and deployment environments.',
+    icon: 'i-heroicons-cog-6-tooth',
+    technologies: ['Nix', 'Infrastructure as Code', 'DevOps'],
+    github: 'https://github.com/ThomasDsantos/nix-infra'
+  },
+  {
+    title: 'dotfiles',
+    description:
+      'Personal development environment configuration files. My curated setup for optimal productivity with Neovim, terminal, and development tools.',
+    icon: 'i-heroicons-command-line',
+    technologies: ['Lua', 'Neovim', 'Shell', 'Config'],
+    github: 'https://github.com/ThomasDsantos/dotfiles'
   }
 ]
 
 const skills = [
   {
-    name: 'Frontend',
-    icon: 'i-heroicons-computer-desktop',
-    items: ['Vue.js', 'React', 'Nuxt', 'Next.js', 'TypeScript', 'Tailwind CSS']
-  },
-  {
     name: 'Backend',
     icon: 'i-heroicons-server',
-    items: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker']
+    items: ['Python', 'FastAPI', 'Flask', 'Django', 'Go', 'Rust', 'Node.js', 'Axum', 'SeaORM']
   },
   {
-    name: 'Outils',
+    name: 'Frontend',
+    icon: 'i-heroicons-computer-desktop',
+    items: ['Vue.js 3', 'Nuxt', 'TypeScript', 'React', 'SCSS', 'Cypress', 'Tailwind CSS']
+  },
+  {
+    name: 'Infrastructure & DevOps',
+    icon: 'i-heroicons-cube',
+    items: ['Kubernetes', 'Docker', 'Helm', 'Kafka', 'Nix', 'Gitlab CI', 'Grafana']
+  },
+  {
+    name: 'Bases de données',
+    icon: 'i-heroicons-circle-stack',
+    items: ['MongoDB', 'ScyllaDB', 'PostgreSQL', 'MsSQL', 'Redis']
+  },
+  {
+    name: 'Outils & Méthodologies',
     icon: 'i-heroicons-wrench-screwdriver',
-    items: ['Git', 'GitHub', 'VS Code', 'Figma', 'Postman', 'Linux']
+    items: ['Git', 'GitHub', 'Neovim', 'Linux', 'Agile', 'Tests unitaires']
   }
 ]
 </script>
