@@ -1,5 +1,5 @@
 <template>
-  <UDropdownMenu :items="languageItems" :popper="{ placement: 'bottom-end' }">
+  <UDropdownMenu :items="languageItems" :popper="{ placement: 'bottom-end' }" @select="handleLanguageChange">
     <UButton
       :icon="currentLocale === 'en' ? 'i-flag-us-4x3' : 'i-flag-fr-4x3'"
       variant="ghost"
@@ -27,19 +27,20 @@ const languageItems = computed(() => [
     {
       label: 'English',
       icon: 'i-flag-us-4x3',
-      click: () => {
-        setLocale('en')
-        navigateTo(switchLocalePath('en'))
-      }
+      value: 'en'
     },
     {
       label: 'Français',
       icon: 'i-flag-fr-4x3',
-      click: () => {
-        setLocale('fr')
-        navigateTo(switchLocalePath('fr'))
-      }
+      value: 'fr'
     }
   ]
 ])
+
+const handleLanguageChange = (item: any) => {
+  if (item.value) {
+    setLocale(item.value)
+    navigateTo(switchLocalePath(item.value))
+  }
+}
 </script>
